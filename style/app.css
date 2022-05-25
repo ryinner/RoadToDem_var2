@@ -45,15 +45,18 @@ hr {
 
 input {
     padding: 4px 6px;
+    font-size: 14px;
+    height: 40px;
     border: none;
+    outline: none;
     border-bottom: 1px solid var(--blue);
 }
 
-input:valid {
+input:valid:not(:placeholder-shown) {
     border-bottom: 1px solid var(--green);
 }
 
-input:invalid {
+input:invalid:not(:placeholder-shown) {
     border-bottom: 1px solid var(--red);
 }
 
@@ -114,24 +117,17 @@ main, nav {
 /* slider */
 
 #slider {   
-    position: relative;
     overflow: hidden;
 }
 
 .slides {
     transition: 300ms ease all;
     width: 100%;
-    height: 100%;
     display: flex;
-    flex-wrap: nowrap;
-    position: relative;
-    width: 100%;
-	height: 100%;
-	left: 0;
 }
 
 .slide {
-    width: 33%;
+    width: 32%;
     height: 100%;
     margin: 10px;
     flex-shrink: 0;

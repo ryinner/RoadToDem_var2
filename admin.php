@@ -13,4 +13,3 @@ if ($_SESSION['is_admin'] == 0) {
 }
 
 $app->init('admin');
-

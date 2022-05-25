@@ -18,7 +18,7 @@ function ajax (form, url, redirect = false) {
 class Slider {
     constructor() {
         this.n = 0,
-        this.items = 3
+        this.items = 2
     }
 
     run() {
@@ -26,7 +26,7 @@ class Slider {
 
         slider.querySelector('.slides').style.marginLeft = `-${slider.querySelector('.slide').offsetWidth * this.n}px`
 
-        if (this.n < this.items-1) {
+        if (this.n < this.items) {
             this.n++
         } else {
             this.n = 0
