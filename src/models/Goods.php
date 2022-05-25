@@ -34,7 +34,7 @@ class Goods
     {
         $db = App::db();
 
-        $query = $db->query('SELECT * FROM `goods`');
+        $query = $db->query('SELECT * FROM `goods` WHERE `count`');
 
         return $query->fetchAll();
     }
@@ -53,9 +53,9 @@ class Goods
     public static function selectInner() {
         $db = App::db();
 
-        $where = "WHERE 1=1";
+        $where = "WHERE g.count != 0";
         if (!empty($_GET['category'])) {
-            $where = " WHERE c.id = " . $_GET['category'];
+            $where .= " AND c.id = " . $_GET['category'];
         }
 
         $orderBy = ' ORDER BY g.id';
